@@ -59,7 +59,7 @@
 <section class="bg-white">
     <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         <div class="font-body text-gray-500 sm:text-lg">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Innovating the Digital Employee Experience</h2>
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Empowering Workplaces with AI Innovation</h2>
             <p class="mb-4">At AI-Solution, we’re not just developing software – we’re transforming industries with AI-driven solutions. From prototyping to enhancing the digital employee experience, we are the strategists, engineers, and innovators driving change. Our approach is simple yet powerful: small enough to innovate rapidly, but scalable enough to address the complexity of global industries.</p>
 
         </div>
@@ -141,15 +141,15 @@
     <div class="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
         <dl class="grid max-w-screen-md gap-8 mx-auto text-gray-900 sm:grid-cols-3">
             <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-3xl md:text-4xl font-extrabold">73M+</dt>
+                <dt class="mb-2 text-3xl md:text-4xl font-extrabold">40M+</dt>
                 <dd class="font-body text-gray-500">developers</dd>
             </div>
             <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-3xl md:text-4xl font-extrabold">1B+</dt>
+                <dt class="mb-2 text-3xl md:text-4xl font-extrabold">20M+</dt>
                 <dd class="font-body text-gray-500">contributors</dd>
             </div>
             <div class="flex flex-col items-center justify-center">
-                <dt class="mb-2 text-3xl md:text-4xl font-extrabold">4M+</dt>
+                <dt class="mb-2 text-3xl md:text-4xl font-extrabold">3M+</dt>
                 <dd class="font-body text-gray-500">organizations</dd>
             </div>
         </dl>

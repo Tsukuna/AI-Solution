@@ -83,58 +83,14 @@ class LoginController extends Controller
         }
     }
 
-    public function register(){
-        return view('auth.register');
-    }
 
-    public function processRegister(Request $request){
-        //Register Data Validation
-        $validator = Validator::make($request->all(),[
-            'name' => 'required | string',
-            'email' => 'required | string | email | unique:users',
-            'password_confirmation' => 'required',
-            'password' => [
-            'required',
-            'confirmed',
-            'string',
-            'min:9',
-        ],
-            'g-recaptcha-response' => 'required',
-            ],
-        [
-            'password.regex' => 'The password must contain at least one uppercase letter, one lowercase letter, one number and one symbol(_!@#$%^&*()?)',
-            'g-recaptcha-response.required' => 'Please complete the reCAPTCHA.',
-        ]);
 
-        if($validator->passes()){
-                $user = new User();
-                $user->name = $request->name;
-                $user->email = $request->email;
-                $user->password = Hash::make($request->password);
-                $user->verification_token = Str::random(32);
-                $user->is_verified = false;
-                $user->role = 'user';
-                $user->save();
 
-                // Send verification email
-                $verificationLink = route('account.verify', ['token' => $user->verification_token]);
-                Mail::send('emails.verification', ['link' => $verificationLink, 'name' => $user->name], function($message) use ($user) {
-                    $message->to($user->email);
-                    $message->subject("Account Verification");
-                });
-                return redirect()->route('email.verify')->with('success','Registration completed! Please check your email to verify your account');
-
-        } else{
-                return redirect()->route('account.register')
-                             ->withInput()
-                             ->withErrors($validator);
-        }
-    }
 
     //Logout Function
     public function logout(){
         Auth::logout();
-        return redirect()->route('account.login');
+        return redirect()->route('account.login')->with('success','Logout Successfully');
     }
 
 }

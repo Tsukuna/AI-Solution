@@ -7,7 +7,7 @@
     <title>AI Solution</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('storage/photos/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('storage/photos/logo.png')}}">
 
     <!-- Scripts and Styles -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
@@ -84,7 +84,7 @@
             <!-- Dropdown menu -->
             <div
                 id="dropdownNavbar"
-                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 group-hover:block absolute top-full left-0"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-full left-0"
             >
                 <ul class="py-2 text-sm text-gray-700">
                     <li>
@@ -116,7 +116,7 @@
             <!-- Dropdown menu -->
             <div
                 id="dropdownNavbar2"
-                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 group-hover:block absolute top-full left-0"
+                class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute top-full left-0"
             >
                 <ul class="py-2 text-sm text-gray-700">
                     <li>
@@ -124,7 +124,7 @@
                     </li>
 
                     <li>
-                        <a href="{{route('feedback')}}" class="block px-4 py-2 hover:bg-purple-100">Review & Feedback</a>
+                        <a href="{{route('feedback.index')}}" class="block px-4 py-2 hover:bg-purple-100">Review & Feedback</a>
                     </li>
                 </ul>
             </div>
@@ -166,7 +166,7 @@
                         <h2 class="mb-6 text-sm font-medium text-gray-900 uppercase">Navigation</h2>
                         <ul class="text-gray-600">
                             <li class="mb-4">
-                                <a href="{{route('feedback')}}" class="hover:underline font-normal">Feedback</a>
+                                <a href="{{route('feedback.index')}}" class="hover:underline font-normal">Feedback</a>
                             </li>
                             <li>
                                 <a href="{{route('contact.index')}}" class="hover:underline font-normal">Contact</a>

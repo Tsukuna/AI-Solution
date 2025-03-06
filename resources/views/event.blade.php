@@ -25,7 +25,7 @@
             <div class="grid gap-8 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 justify-items-center">
                 <!-- Present Event Card 1 -->
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm present-event">
-                    <img class="rounded-t-lg w-full" src="https://via.placeholder.com/300" alt="Event Image" />
+                    <img class="rounded-t-lg w-full" src="{{asset('storage/photos/event_3.jpg')}}" alt="Event Image" />
                     <div class="p-5">
                         <h5 class="mb-2 text-2xl font-bold text-gray-900">AI Revolution in 2025</h5>
                         <p class="mb-3 font-normal text-gray-700">Join us as we explore the latest AI breakthroughs shaping the future of industries.</p>
@@ -40,7 +40,7 @@
 
                 <!-- Past Event Card 1 -->
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm past-event">
-                    <img class="rounded-t-lg w-full" src="https://via.placeholder.com/300" alt="Event Image" />
+                    <img class="rounded-t-lg w-full" src="{{asset('storage/photos/event_2.jpg')}}" alt="Event Image" />
                     <div class="p-5">
                         <h5 class="mb-2 text-2xl font-bold text-gray-900">AI in Healthcare Summit</h5>
                         <p class="mb-3 font-normal text-gray-700">Exploring how AI is revolutionizing healthcare and improving patient outcomes.</p>
@@ -55,7 +55,7 @@
 
                 <!-- Present Event Card 2 -->
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm present-event">
-                    <img class="rounded-t-lg w-full" src="https://via.placeholder.com/300" alt="Event Image" />
+                    <img class="rounded-t-lg w-full" src="{{asset('storage/photos/event_1.jpg')}}" alt="Event Image" />
                     <div class="p-5">
                         <h5 class="mb-2 text-2xl font-bold text-gray-900">Future of Digital Work</h5>
                         <p class="mb-3 font-normal text-gray-700">A discussion on how AI-driven automation is changing the work landscape.</p>
@@ -70,7 +70,7 @@
 
                 <!-- Past Event Card 2 -->
                 <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm past-event">
-                    <img class="rounded-t-lg w-full" src="https://via.placeholder.com/300" alt="Event Image" />
+                    <img class="rounded-t-lg w-full" src="{{asset('storage/photos/event_4.jpg')}}" alt="Event Image" />
                     <div class="p-5">
                         <h5 class="mb-2 text-2xl font-bold text-gray-900">Tech Innovations of 2023</h5>
                         <p class="mb-3 font-normal text-gray-700">A look back at the groundbreaking tech innovations from 2023.</p>

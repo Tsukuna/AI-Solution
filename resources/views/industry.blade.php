@@ -8,9 +8,9 @@
     </div>
 </section>
 
-<span class="text-center py-8">
+{{-- <span class="text-center py-8">
     <h2 class="text-5xl font-extrabold text-gray-900">Industries We Serve</h2>
-</span>
+</span> --}}
 
 <!-- First Section -->
 <section class="bg-white">
@@ -61,7 +61,7 @@
 <!-- Fourth Section -->
 <section class="bg-white">
     <div class="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 sm:py-16 lg:px-6">
-        <div class="mt-4 md:mt-0 py-0 md:py-20">
+        <div class="mt-4 md:mt-0 py-0 md:py-10">
             <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900">Empowering Global Impact with AI</h2>
             <p class="mb-6 font-body text-gray-500 md:text-lg">We are committed to transforming businesses globally, with AI solutions designed to support employees at work and make the digital workplace more efficient and human-centric.</p>
             <button type="button" class="text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-body rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">

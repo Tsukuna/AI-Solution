@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
             'email' => 'htet1234lu@gmail.com',
             'verification_token' => null,
             'is_verified' => true,
-            'password' => Hash::make('john1234doe!'), // Replace with your password
-            'role' => 'admin',  // Default to 'user'
+            'password' => Hash::make('john1234doe!'),
+            'role' => 'admin', 
             'otp' => null,
         ]);
     }

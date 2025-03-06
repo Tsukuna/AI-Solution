@@ -35,7 +35,7 @@ class OtpController extends Controller
             $user->otp = null;
             $user->save();
             session(['otp_authentication' => true]);
-            return redirect()->route('dashboard.home');
+            return redirect()->route('dashboard.index');
         } else{
         return redirect()->route('login.otp')->with('error','The provided OTP is not correct');
 

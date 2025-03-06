@@ -3,15 +3,14 @@
 @section('content')
 <section class="bg-white mt-24">
     <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img class="w-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup.svg" alt="dashboard image">
-        <img class="w-full hidden" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/cta/cta-dashboard-mockup-dark.svg" alt="dashboard image">
+        <img class="w-full rounded-md" src="{{asset('storage/photos/about_us.jpg')}}" alt="about image">
         <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Let's create more tools and ideas that brings us together.</h2>
-            <p class="mb-6 font-body text-gray-500 md:text-lg">Flowbite helps you connect with friends and communities of people who share your interests. Connecting with your friends and family as well as discovering new ones is easy with features like Groups.</p>
-
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Innovating the Future of Work with AI Solutions</h2>
+            <p class="mb-6 font-body text-gray-500 md:text-lg">At AI-Solution, we leverage cutting-edge AI technology to create tools that enhance the digital employee experience. Our mission is to revolutionize workplaces by providing innovative software solutions that help industries optimize their processes and foster collaboration across teams globally.</p>
         </div>
     </div>
 </section>
+
 
 <section class="relative bg-purple-700 bg-cover bg-center bg-no-repeat min-h-[350px] md:min-h-[450px] lg:min-h-[500px] flex items-center justify-center">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Dark Overlay -->
@@ -70,7 +69,7 @@
                         <a href="#">Bonnie Green</a>
                     </h3>
                     <span class="text-gray-500">CEO & Web Developer</span>
-                    <p class="mt-3 mb-4 font-body text-gray-500">Bonnie drives the technical strategy of the flowbite platform and brand.</p>
+                    <p class="mt-3 mb-4 font-body text-gray-500">Bonnie drives the technical strategy of the AI-Solution platform and brand.</p>
                     <ul class="flex space-x-4 sm:mt-0">
                         <li>
                             <a href="#" class="text-gray-500 hover:text-gray-900">
@@ -104,7 +103,7 @@
                         <a href="#">Jese Leos</a>
                     </h3>
                     <span class="text-gray-500">CTO</span>
-                    <p class="mt-3 mb-4 font-body text-gray-500">Jese drives the technical strategy of the flowbite platform and brand.</p>
+                    <p class="mt-3 mb-4 font-body text-gray-500">Jese drives the technical strategy of the AI-Solution platform and brand.</p>
                     <ul class="flex space-x-4 sm:mt-0">
                         <li>
                             <a href="#" class="text-gray-500 hover:text-gray-900">
@@ -138,7 +137,7 @@
                         <a href="#">Michael Gough</a>
                     </h3>
                     <span class="text-gray-500">Senior Front-end Developer</span>
-                    <p class="mt-3 mb-4 font-body text-gray-500">Michael drives the technical strategy of the flowbite platform and brand.</p>
+                    <p class="mt-3 mb-4 font-body text-gray-500">Michael drives the technical strategy of the AI-Solution platform and brand.</p>
                     <ul class="flex space-x-4 sm:mt-0">
                         <li>
                             <a href="#" class="text-gray-500 hover:text-gray-900">
@@ -172,7 +171,7 @@
                         <a href="#">Lana Byrd</a>
                     </h3>
                     <span class="text-gray-500">Marketing & Sale</span>
-                    <p class="mt-3 mb-4 font-body text-gray-500">Lana drives the technical strategy of the flowbite platform and brand.</p>
+                    <p class="mt-3 mb-4 font-body text-gray-500">Lana drives the technical strategy of the AI-Solution platform and brand.</p>
                     <ul class="flex space-x-4 sm:mt-0">
                         <li>
                             <a href="#" class="text-gray-500 hover:text-gray-900">
@@ -199,5 +198,5 @@
             </div>
         </div>
     </div>
-  </section>
+</section>
 @endsection

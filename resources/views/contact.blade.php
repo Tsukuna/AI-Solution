@@ -4,7 +4,8 @@
 
 <section class="bg-white mt-24">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <div class="bg-white rounded-lg shadow-lg border border-gray-300 p-6 lg:p-10">
+    <div class="bg-white rounded-lg shadow-lg border border-gray-300 p-6 lg:p-10">
+
           <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
             Contact Us
           </h2>
@@ -187,8 +188,9 @@
             Send Message
           </button>
           </form>
-        </div>
+    </div>
       </div>
+
 </section>
 
 @endsection
