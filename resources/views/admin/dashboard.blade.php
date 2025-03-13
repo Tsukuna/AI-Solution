@@ -28,12 +28,16 @@
 
         <!-- Date Search -->
         <div class="relative w-full">
+           <form action="{{route('date.search')}}" method="GET">
+            @csrf
             <input
-                type="date"
-                name="date"
-                id="date-input"
-                class="w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500"
+            type="date"
+            name="date"
+            id="date-input"
+            class="w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500"
             />
+            <button type="submit" class="hidden">Search</button>
+           </form>
         </div>
 
         <!-- Country Search -->
@@ -55,7 +59,12 @@
             </form>
         </div>
 
+
+
+
     </div>
+
+
 
     <!-- Inquiry Stats Section -->
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
@@ -78,8 +87,33 @@
         </div>
     </div>
 
+     <!-- Status Filter Section -->
+    <!-- Status Filter Section -->
+<div class="relative w-full sm:w-auto flex items-center space-x-2">
+    <form action="{{ route('status.search') }}" method="GET" class="flex w-50 gap-5">
+        @csrf
+        <div class="flex-1">
+            <select
+                name="status"
+                id="status"
+                class="w-full p-3 text-sm sm:text-base text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500"
+            >
+                <option value="">Select Status</option>
+                <option value="In Progress" {{ request()->status == 'In Progress' ? 'selected' : '' }}>In Progress</option>
+                <option value="Follow Up" {{ request()->status == 'Follow Up' ? 'selected' : '' }}>Follow Up</option>
+                <option value="Resolve" {{ request()->status == 'Resolve' ? 'selected' : '' }}>Resolve</option>
+                <option value="Pending" {{ request()->status == 'Pending' ? 'selected' : '' }}>Pending</option>
+            </select>
+        </div>
+        <button type="submit" class="mt-2 w-auto text-center text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 rounded-lg px-6 py-2">
+            Filter
+        </button>
+    </form>
+</div>
+
+
     <!-- Table Section -->
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-4">
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg bg-white p-4 mt-2">
         @if (session('fail'))
             <div id="alert-3" class="flex items-center p-4 mb-4 text-red-800 rounded-lg bg-red-50" role="alert">
                 <svg class="shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -102,35 +136,42 @@
         <table id="user-table" class="w-full text-sm text-left rtl:text-right text-gray-500">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
+                    <th scope="col" class="px-6 py-3">ID</th>
                     <th scope="col" class="px-6 py-3">Name</th>
                     <th scope="col" class="px-6 py-3">Company</th>
                     <th scope="col" class="px-6 py-3">Country</th>
                     <th scope="col" class="px-6 py-3">Job Title</th>
+                    <th scope="col" class="px-6 py-3">Submitted Date</th>
                     <th scope="col" class="px-6 py-3">Status</th>
                     <th scope="col" class="px-6 py-3">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($users as $user)
+
                 <tr class="bg-white border-b border-gray-200">
-                    <th scope="row" class="px-6 py-4 font-body text-gray-900 whitespace-nowrap">
+                    <td scope="row" class="px-6 py-4 font-body text-gray-900 whitespace-nowrap">
+                        {{$loop->iteration}}
+                    </td>
+                    <td scope="row" class="px-6 py-4 font-body text-gray-900 whitespace-nowrap">
                         {{$user->name}}
-                    </th>
+                    </td>
                     <td class="px-6 py-4">{{$user->company}}</td>
                     <td class="px-6 py-4">{{$user->country}}</td>
                     <td class="px-6 py-4">{{$user->job_title}}</td>
+                    <td class="px-6 py-4">{{$user->created_at->format('Y-m-d')}}</td>
                     <td class="px-6 py-4">
-                        <!-- Conditional Status Display -->
-                        @if ($user->status == 'In Progress')
-                            <span class="px-3 py-1 text-sm font-body text-white bg-blue-600 rounded-lg">In Progress</span>
-                        @elseif ($user->status == 'Follow Up')
-                            <span class="px-3 py-1 text-sm font-body text-white bg-green-600 rounded-lg">Followed Up</span>
-                        @elseif ($user->status == 'Resolve')
-                            <span class="px-3 py-1 text-sm font-body text-white bg-yellow-600 rounded-lg">Resolved</span>
-                        @else
-                            <span class="px-3 py-1 text-sm font-body text-white bg-gray-600 rounded-lg">Pending</span>
-                        @endif
+                        <select
+                            name="status"
+                            class="w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-500 focus:border-primary-500"
+                        >
+                            <option value="In Progress" {{ $user->status == 'In Progress' ? 'selected' : '' }}>In Progress</option>
+                            <option value="Follow Up" {{ $user->status == 'Follow Up' ? 'selected' : '' }}>Follow Up</option>
+                            <option value="Resolve" {{ $user->status == 'Resolve' ? 'selected' : '' }}>Resolve</option>
+                            <option value="Pending" {{ $user->status == 'Pending' ? 'selected' : '' }}>Pending</option>
+                        </select>
                     </td>
+
                     <td class="px-6 py-4">
                         <!-- Detail Button -->
                         <a  href="{{route('contact.show',$user->id)}}" class="px-3 py-1 text-sm font-body text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:ring-2 focus:outline-none focus:ring-primary-300">
@@ -145,9 +186,17 @@
                     <td colspan="6" class="px-6 py-4 text-center text-gray-500 font-body">Inquiry Not Found</td>
                 </tr>
                 @endif
+
             </tbody>
         </table>
     </div>
+
+    <div class="mt-4">
+        {{$users->links('pagination::tailwind')}}
+    </div>
+
+
+
 
     <div class="flex flex-col sm:flex-row w-full justify-center sm:justify-end mt-4 space-y-2 sm:space-y-0 sm:space-x-2">
         <!-- List Button -->

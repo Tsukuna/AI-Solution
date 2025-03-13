@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('country');
             $table->string('job_title');
             $table->text('job_detail');
-            $table->enum('status',['In Progress','Follow Up','Resolve','Pending'])->default('Pending');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

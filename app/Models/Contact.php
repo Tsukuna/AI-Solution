@@ -13,6 +13,7 @@ class Contact extends Model
         'company',
         'country',
         'job_title',
-        'job_detail'
+        'job_detail',
+        'status'
     ];
 }

@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('home',[AppController::class,'home'])->name('home')->middleware(AdminMiddleWare::class);;
+Route::get('home',[AppController::class,'home'])->name('home');;
 Route::get('blog',[AppController::class,'blog'])->name('blog');
 Route::get('about',[AppController::class,'about'])->name('about');
 Route::get('industry',[AppController::class,'industry'])->name('industry');
@@ -31,6 +31,8 @@ Route::resource('create/blog',BlogController::class);
 
 Route::get('user/search/title',[DashBoardController::class,'searchJobTitle'])->name('job_title.search');
 Route::get('user/search/country',[DashBoardController::class,'searchCountry'])->name('country.search');
+Route::get('user/search/date',[DashBoardController::class,'searchDate'])->name('date.search');
+Route::get('user/search/status',[DashBoardController::class,'searchStatus'])->name('status.search');
 Route::get('form/export',[DashBoardController::class,'exportCSV'])->name('form.export');
 // Route::resource('/dashboard', DashBoardController::class);
 

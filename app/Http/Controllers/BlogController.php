@@ -58,8 +58,6 @@ class BlogController extends Controller
           } else{
             return redirect()->back()->withErrors($validator)->withInput();
         }
-
-
     }
 
     /**

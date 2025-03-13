@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DashBoardController extends Controller
 {
@@ -11,7 +13,6 @@ class DashBoardController extends Controller
     public function searchJobTitle(Request $request){
         $query = $request->input('job_title');
         $users = Contact::where('job_title','LIKE',"%$query%")
-                            ->orWhere('company','LIKE',"%$query%")
                             ->get();
         return view('admin.dashboard',compact('users'));
     }
@@ -20,6 +21,19 @@ class DashBoardController extends Controller
         $query = $request->input('country');
         $users = Contact::where('country','LIKE',"%$query%")
                                 ->get();
+        return view('admin.dashboard',compact('users'));
+    }
+
+    public function searchDate(Request $request){
+        $query = $request->input('date');
+        $users = Contact::whereDate('created_at', Carbon::createFromFormat('Y-m-d', $query)->format('Y-m-d'))->get();
+                return view('admin.dashboard',compact('users'));
+    }
+
+
+    public function searchStatus(Request $request){
+        $query = $request->query('status');
+        $users = Contact::where('status', '=', $query)->paginate(5);
         return view('admin.dashboard',compact('users'));
     }
 
@@ -62,7 +76,7 @@ class DashBoardController extends Controller
      */
     public function index()
     {
-        $users = Contact::all();
+        $users = Contact::paginate(5);
         return view('admin.dashboard',compact('users'));
     }
 

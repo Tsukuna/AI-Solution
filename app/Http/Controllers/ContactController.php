@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
@@ -17,6 +18,7 @@ class ContactController extends Controller
             'United States',
             'Canada',
             'France',
+             'Myanmar',
             'Germany',
             'Australia',
             'Japan',
@@ -61,6 +63,11 @@ class ContactController extends Controller
             $data->job_title = $request->job_title;
             $data->job_detail = $request->job_detail;
             $data->save();
+
+            Mail::send('emails.mailContact',['data' => $data], function($message) use ($data){
+                    $message->to($data->email)
+                            ->subject('New Contact Form Submission');
+            });
             return redirect()->route('contact.index')->with('success','Thank You For Contacting Us!');
         } else{
             return redirect()->back()->withErrors($validator)->withInput();
