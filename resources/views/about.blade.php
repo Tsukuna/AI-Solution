@@ -3,13 +3,19 @@
 @section('content')
 <section class="bg-white mt-24">
     <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-        <img class="w-full rounded-md" src="{{asset('storage/photos/about_us.jpg')}}" alt="about image">
-        <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">Innovating the Future of Work with AI Solutions</h2>
-            <p class="mb-6 font-body text-gray-500 md:text-lg">At AI-Solution, we leverage cutting-edge AI technology to create tools that enhance the digital employee experience. Our mission is to revolutionize workplaces by providing innovative software solutions that help industries optimize their processes and foster collaboration across teams globally.</p>
+        <div class="w-full rounded-md">
+            <iframe class="w-full h-72 rounded-md" src="https://www.youtube.com/embed/KKNCiRWd_j0" title="What Is an AI Anyway? | Mustafa Suleyman | TED" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="mt-4 md:mt-0 flex justify-center items-center">
+            <div>
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 text-justify">Innovating the Future of Work with AI Solutions</h2>
+                <p class="mb-6 font-body text-gray-500 md:text-lg text-justify">At AI-Solution, we leverage cutting-edge AI technology to create tools that enhance the digital employee experience. Our mission is to revolutionize workplaces by providing innovative software solutions that help industries optimize their processes and foster collaboration across teams globally.</p>
+            </div>
         </div>
     </div>
 </section>
+
+
 
 
 <section class="relative bg-purple-700 bg-cover bg-center bg-no-repeat min-h-[350px] md:min-h-[450px] lg:min-h-[500px] flex items-center justify-center">
@@ -199,4 +205,52 @@
         </div>
     </div>
 </section>
+
+<!-- Chatbox Button & Modal -->
+<div class="fixed bottom-6 right-6 z-50">
+    <!-- Chat Button -->
+    <button id="chat-toggle" class="w-16 h-16 bg-primary-700 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 transition">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M21 12c0 4.418-4.03 8-9 8a9.874 9.874 0 0 1-4-.856l-5 2 1.26-3.78A8.95 8.95 0 0 1 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+    </button>
+
+    <!-- Chatbox Container (Initially Hidden) -->
+    <div id="chat-container" class="hidden fixed bottom-20 right-6 w-80 h-[500px] bg-white rounded-lg shadow-lg border border-gray-300">
+        <div class="flex justify-between items-center bg-primary-700 text-white px-4 py-3 rounded-t-lg">
+            <h2 class="text-lg font-semibold">Chat with AI</h2>
+            <button id="chat-close" class="text-white hover:text-gray-300">
+                ✖
+            </button>
+        </div>
+        <div class="w-full h-[450px]">
+            <iframe
+            src="https://www.chatbase.co/chatbot-iframe/TpGRvL1jk4yfDogoRCxH-"
+            width="100%"
+            style="height: 100%; border: none"
+            class="rounded-b-lg"
+        ></iframe>
+        </div>
+    </div>
+</div>
+@endsection
+
+
+@section('javascript')
+<!-- JavaScript for Chatbox Toggle -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const chatToggle = document.getElementById("chat-toggle");
+        const chatContainer = document.getElementById("chat-container");
+        const chatClose = document.getElementById("chat-close");
+
+        chatToggle.addEventListener("click", function () {
+            chatContainer.classList.toggle("hidden");
+        });
+
+        chatClose.addEventListener("click", function () {
+            chatContainer.classList.add("hidden");
+        });
+    });
+    </script>
 @endsection

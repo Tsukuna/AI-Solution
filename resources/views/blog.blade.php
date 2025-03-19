@@ -58,14 +58,55 @@
                     </div>
                 </div>
                 @endforeach
-
-
-
-
-
-
             </div>
         </div>
     </div>
 </section>
+
+<!-- Chatbox Button & Modal -->
+<div class="fixed bottom-6 right-6 z-50">
+    <!-- Chat Button -->
+    <button id="chat-toggle" class="w-16 h-16 bg-primary-700 text-white rounded-full shadow-lg flex items-center justify-center hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 transition">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M21 12c0 4.418-4.03 8-9 8a9.874 9.874 0 0 1-4-.856l-5 2 1.26-3.78A8.95 8.95 0 0 1 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+        </svg>
+    </button>
+
+    <!-- Chatbox Container (Initially Hidden) -->
+    <div id="chat-container" class="hidden fixed bottom-20 right-6 w-80 h-[500px] bg-white rounded-lg shadow-lg border border-gray-300">
+        <div class="flex justify-between items-center bg-primary-700 text-white px-4 py-3 rounded-t-lg">
+            <h2 class="text-lg font-semibold">Chat with AI</h2>
+            <button id="chat-close" class="text-white hover:text-gray-300">
+                ✖
+            </button>
+        </div>
+        <div class="w-full h-[450px]">
+            <iframe
+            src="https://www.chatbase.co/chatbot-iframe/TpGRvL1jk4yfDogoRCxH-"
+            width="100%"
+            style="height: 100%; border: none"
+            class="rounded-b-lg"
+        ></iframe>
+        </div>
+    </div>
+</div>
+@endsection
+
+@section('javascript')
+<!-- JavaScript for Chatbox Toggle -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const chatToggle = document.getElementById("chat-toggle");
+        const chatContainer = document.getElementById("chat-container");
+        const chatClose = document.getElementById("chat-close");
+
+        chatToggle.addEventListener("click", function () {
+            chatContainer.classList.toggle("hidden");
+        });
+
+        chatClose.addEventListener("click", function () {
+            chatContainer.classList.add("hidden");
+        });
+    });
+    </script>
 @endsection

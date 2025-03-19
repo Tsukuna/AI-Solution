@@ -20,11 +20,7 @@
             <a href="{{route('contact.index')}}" class="text-purple-700 justify-center  hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-body rounded-lg text-sm px-5 py-3 text-center me-2 mb-2 inline-flex">
                 Contact Us
             </a>
-
         </div>
-
-
-
     </div>
 </section>
 
@@ -69,10 +65,6 @@
         </div>
     </div>
 </section>
-
-
-
-
 
 <section class="bg-white">
     <div class="py-8 lg:py-16 mx-auto max-w-screen-xl px-4">

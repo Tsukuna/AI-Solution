@@ -18,8 +18,6 @@ class AppController extends Controller
         return  view('blog',compact('blogs'));
     }
 
-   
-
     public function about()
     {
         return  view('about');

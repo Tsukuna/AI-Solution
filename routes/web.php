@@ -24,6 +24,8 @@ Route::get('event',[AppController::class,'event'])->name('event');
 
 Route::resource('feedback',ResponseController::class);
 
+Route::get('feedback-dashboard',[ResponseController::class,'feedbackDashboard'])->name('feedbackDashboard');
+
 Route::resource('/contact', ContactController::class);
 Route::get('/blog/search', [BlogController::class,'search'])->name('blog.search');
 Route::resource('create/blog',BlogController::class);

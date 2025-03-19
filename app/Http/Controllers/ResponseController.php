@@ -18,6 +18,10 @@ class ResponseController extends Controller
         return view('feedback',compact('responses'));
     }
 
+    public function feedbackDashBoard(){
+        $responses = Response::paginate(5);
+        return view('admin.feedbackDashboard',compact('responses'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -81,8 +85,12 @@ class ResponseController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Response $response)
+    public function destroy(string $id)
     {
-        //
+        $response = Response::find($id);
+        if($response){
+            $response->delete();
+            return redirect()->route('feedbackDashboard');
+        }
     }
 }

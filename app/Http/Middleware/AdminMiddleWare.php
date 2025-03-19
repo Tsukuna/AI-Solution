@@ -16,10 +16,9 @@ class AdminMiddleWare
      */
     public function handle(Request $request, Closure $next): Response
     {
-         // Check if the user is authenticated and has the 'admin' role
-         if (Auth::check() && Auth::user()->role === 'admin') {
-        // Redirect to another page (like the admin dashboard) if the user is an admin
-        return redirect()->route('dashboard.index'); // Change this to your admin dashboard route
+
+        if (Auth::check() && Auth::user()->role === 'admin') {
+            return redirect()->route('dashboard.index');
         }
 
         return $next($request);

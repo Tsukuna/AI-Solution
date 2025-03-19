@@ -48,7 +48,7 @@ class ContactController extends Controller
         'email' => 'required | email',
         'phone' => 'required | max:11',
         'company' => 'required',
-        'country' => 'required',
+        'country' => 'required | in:United States,Canada,France,Myanmar,Germany,Australia,Japan,India,Brazil,South Africa,United Kingdom',
         'job_title' => 'required',
         'job_detail' => 'required'
       ]);
