@@ -32,7 +32,7 @@
             @csrf
             <div>
                 <label class="block text-sm font-body text-gray-700">Full Name</label>
-                <input type="text" name="full_name" minlength="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="John Doe">
+                <input type="text" name="full_name" minlength="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
                 @error('full_name')
                 <p class="mt-2 text-sm text-red-600 flex items-center">
                     <svg class="flex-shrink-0 inline w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -45,7 +45,7 @@
 
             <div>
                 <label class="block text-sm font-body text-gray-700">Email Address</label>
-                <input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="you@example.com">
+                <input type="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="name@example.com">
                 @error('email')
                 <p class="mt-2 text-sm text-red-600 flex items-center">
                     <svg class="flex-shrink-0 inline w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -96,7 +96,7 @@
 
             <div>
                 <label class="block text-sm font-body text-gray-700">Your Feedback</label>
-                <textarea name="feedback"  maxlength="500" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Please share your detailed feedback here..."></textarea>
+                <textarea name="feedback"  maxlength="500" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" placeholder="Please share your detailed feedback here...">{{old('feedback')}}</textarea>
                 @error('feedback')
                 <p class="mt-2 text-sm text-red-600 flex items-center">
                     <svg class="flex-shrink-0 inline w-4 h-4 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

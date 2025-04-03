@@ -7,7 +7,7 @@
     <title>AI Solution</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('storage/photos/logo.png')}}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('storage/photos/AI_Logo.png')}}">
 
     <!-- Scripts and Styles -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
@@ -20,7 +20,7 @@
     <nav  id="navbar"  class="bg-white border-gray-200 fixed top-0 left-0 w-full z-50 transition-all duration-300">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="{{route('home')}}" class="flex items-center space-x-2 rtl:space-x-reverse">
-        <img src="{{ asset('storage/photos/logo.png') }}" class="h-16 w-16" />
+        <img src="{{ asset('storage/photos/AI_Logo.png') }}" class="h-16 w-16" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap">AI Solution</span>
     </a>
     <div class="flex md:order-2">
@@ -157,7 +157,7 @@
             <div class="md:flex md:justify-between">
                 <div class="mb-6 md:mb-0">
                     <a href="{{route('about')}}" class="flex items-center space-x-2 rtl:space-x-reverse">
-                        <img src="{{ asset('storage/photos/logo.png') }}" class="h-16 w-16" />
+                        <img src="{{ asset('storage/photos/AI_Logo.png') }}" class="h-16 w-16" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap">AI Solution</span>
                     </a>
                 </div>

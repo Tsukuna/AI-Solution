@@ -18,23 +18,32 @@ class ResponseSeeder extends Seeder
             'email' => 'johndoe@example.com',
             'category' => 'General Feedback',
             'rating' => 5,
-            'feedback' => 'The service is excellent, and I love the design of the application!',
+            'feedback' => 'I love the overall user experience and the intuitive interface of the app!',
         ]);
 
         Response::create([
-            'full_name' => 'Jane Smith',
-            'email' => 'janesmith@example.com',
-            'category' => 'Bug Report',
-            'rating' => 3,
-            'feedback' => 'I encountered a bug while trying to submit the form. The page crashes when I click submit.',
+            'full_name' => 'Sarah Lee',
+            'email' => 'sarahlee@example.com',
+            'category' => 'Billing Issue',
+            'rating' => 2,
+            'feedback' => 'I was charged incorrectly. Can you please check my invoice?',
         ]);
 
         Response::create([
-            'full_name' => 'Emily Johnson',
-            'email' => 'emilyjohnson@example.com',
-            'category' => 'Feature Request',
+            'full_name' => 'Michael Brown',
+            'email' => 'michaelbrown@example.com',
+            'category' => 'Customer Service',
             'rating' => 4,
-            'feedback' => 'It would be great to have a dark mode feature in the app.',
+            'feedback' => 'The customer service team was very helpful and polite, but the response time was a bit slow.',
         ]);
+
+        Response::create([
+            'full_name' => 'Sophie Green',
+            'email' => 'sophiegreen@example.com',
+            'category' => 'Technical Support',  
+            'rating' => 3,
+            'feedback' => 'The app keeps crashing when I try to upload my profile picture. Need a fix for this issue.',
+        ]);
+
     }
 }

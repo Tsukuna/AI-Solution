@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AI Solution Dashboard</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('storage/photos/logo.png') }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ asset('storage/photos/AI_Logo.png') }}">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.46.0/dist/apexcharts.min.js"></script>
@@ -25,44 +25,19 @@
               </svg>
            </button>
           <a href="" class="flex ms-2 md:me-24 mx-auto items-center">
-            <img src="{{ asset('storage/photos/logo.png')}}" class="h-10 w-10 me-2" alt="logo" />
+            <img src="{{ asset('storage/photos/AI_Logo.png')}}" class="h-10 w-10 me-2" alt="logo" />
             <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap">AI Solution</span>
           </a>
         </div>
         <div class="flex items-center">
-            <div class="flex items-center ms-3">
-              <div>
-                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300" aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                  <span class="sr-only">Open user menu</span>
-                  <img class="w-8 h-8 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-5.jpg" alt="user photo">
-                </button>
-              </div>
-              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-sm shadow-sm" id="dropdown-user">
-                <div class="px-4 py-3" role="none">
-                  <p class="text-sm text-gray-900" role="none">
-                    {{-- {{Auth::user()->name}} --}}
-                  </p>
-                  <p class="text-sm font-body text-gray-900 truncate" role="none">
-                   {{-- {{Auth::user()->email}} --}}
-                  </p>
-                </div>
-                <ul class="py-1" role="none">
-                  <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Dashboard</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Earnings</a>
-                  </li>
-                  <li>
-                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
-                  </li>
-                </ul>
-              </div>
+            <div class="flex items-center ms-3 space-x-3">
+                <p class="text-sm md:text-lg font-medium text-gray-800">
+                    <span class="text-gray-600">Welcome,</span>
+                    <span class="text-gray-900">{{ Auth::user()->name }}</span>
+                </p>
             </div>
-          </div>
+        </div>
+
       </div>
     </div>
   </nav>

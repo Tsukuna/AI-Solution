@@ -84,10 +84,7 @@
 
 
     <div class="flex flex-col sm:flex-row w-full justify-center sm:justify-end mt-4 space-y-2 sm:space-y-0 sm:space-x-2">
-        <!-- List Button -->
-        <a href="{{route('dashboard.index')}}" class="px-4 py-2 w-full sm:w-auto text-center text-white bg-primary-600 rounded-lg hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300">
-            List
-        </a>
+       
         <!-- Export CSV Button -->
         <a href="{{ route('form.export') }}" class="px-4 py-2 w-full sm:w-auto text-center text-white bg-green-600 rounded-lg hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300">
             Export CSV

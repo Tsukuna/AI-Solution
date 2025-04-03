@@ -90,7 +90,7 @@
 
                 <div>
                     <button type="submit" id="submitBtn" disabled
-                        class="w-full p-3 bg-primary-600 text-white font-body rounded-lg hover:bg-primary-500 active:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500">Login</button>
+                        class="w-full p-3 bg-primary-600 text-white font-body rounded-lg hover:bg-primary-500     active:bg-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500">Login</button>
                 </div>
 
             </form>
